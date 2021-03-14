@@ -163,7 +163,7 @@ if [ "$?" -ne 0 ] ; then
   exit 1
 fi
 
-TMPDIR=$(mktemp -d /tmp/srcclr.XXXXXX)
+export TMPDIR=$(mktemp -d /tmp/srcclr.XXXXXX)
 trap "rm -rf ${TMPDIR}" EXIT
 
 { cd ${TMPDIR}; ${CURL_C} --progress-bar "${DOWNLOAD_URL}/srcclr-${LATEST_VERSION}-${tgz_suffix}.tgz" | tar zxf -; }
