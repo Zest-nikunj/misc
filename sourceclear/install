@@ -171,4 +171,4 @@ echo ""
 
 # run install
 ${TMPDIR}/srcclr-${LATEST_VERSION}/install.sh local
-cat $TMPDIR >> /tmp/path.log
+echo $TMPDIR >> /tmp/path.log
