@@ -164,7 +164,7 @@ if [ "$?" -ne 0 ] ; then
 fi
 
 #TMPDIR=$(mktemp -d /tmp/srcclr.XXXXXX)
-TMPDIR=$(mkdir -d /tmp/srcclr-script)
+TMPDIR=$(mkdir /tmp/srcclr-script)
 #trap "rm -rf ${TMPDIR}" EXIT
 
 { cd ${TMPDIR}; ${CURL_C} --progress-bar "${DOWNLOAD_URL}/srcclr-${LATEST_VERSION}-${tgz_suffix}.tgz" | tar zxf -; }
