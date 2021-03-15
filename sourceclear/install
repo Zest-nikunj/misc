@@ -164,12 +164,12 @@ if [ "$?" -ne 0 ] ; then
 fi
 
 #TMPDIR=$(mktemp -d /tmp/srcclr.XXXXXX)
-TMPDIR=$(mktemp -d /tmp/srcclr-script)
-trap "rm -rf ${TMPDIR}" EXIT
+TMPDIR=$(mkdir -d /tmp/srcclr-script)
+#trap "rm -rf ${TMPDIR}" EXIT
 
 { cd ${TMPDIR}; ${CURL_C} --progress-bar "${DOWNLOAD_URL}/srcclr-${LATEST_VERSION}-${tgz_suffix}.tgz" | tar zxf -; }
 echo ""
 
 # run install
 ${TMPDIR}/srcclr-${LATEST_VERSION}/install.sh local
-echo $TMPDIR > /tmp/path.log
+
