@@ -173,7 +173,7 @@ fi
 # ${TMPDIR}/srcclr-${LATEST_VERSION}/install.sh
 
 #TMPDIR=$(mkdir -p /tmp/srcclr-script)
-TMPDIR=$(mkdir -p /tmp/srcclr-script)
+TMPDIR=$(mkdir -p /tmp/srcclr-script || true)
 
 { cd /tmp/srcclr-script; ${CURL_C} --progress-bar "${DOWNLOAD_URL}/srcclr-${LATEST_VERSION}-${tgz_suffix}.tgz" | tar zxf -; }
 
