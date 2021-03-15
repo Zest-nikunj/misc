@@ -173,8 +173,8 @@ fi
 # ${TMPDIR}/srcclr-${LATEST_VERSION}/install.sh
 
 #TMPDIR=$(mkdir -p /tmp/srcclr-script)
-TMPDIR=$(mkdir -p ./srcclr-script)
-echo "TMPDIR $TMPDIR"
-{ cd ${TMPDIR}; ${CURL_C} --progress-bar "${DOWNLOAD_URL}/srcclr-${LATEST_VERSION}-${tgz_suffix}.tgz" | tar zxf -; }
-echo "TMPDIR $TMPDIR"
-${TMPDIR}/srcclr-${LATEST_VERSION}/install.sh local
+TMPDIR=$(mkdir -p /tmp/srcclr-script)
+
+{ cd /tmp/srcclr-script; ${CURL_C} --progress-bar "${DOWNLOAD_URL}/srcclr-${LATEST_VERSION}-${tgz_suffix}.tgz" | tar zxf -; }
+
+/tmp/srcclr-script/srcclr-${LATEST_VERSION}/install.sh local
